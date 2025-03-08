@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias de Estudo</title>
+    <link rel="stylesheet" href="/static/dia.css">
+</head>
+<body>
+    <h1>Dias de Estudo</h1>
+    <a href="/admin/calendary/diadeestudo/add/" class="btn-admin">+ Adicionar Dia de Estudo</a>
+    <div class="container">
+        {% for dia in dias %}
+            <div class="dia {{ dia.nivel }}">
+                <h2>{{ dia.data|date:"d/m/Y" }}</h2>
+                <p><strong>Horas estudadas:</strong> {{ dia.total_horas }}</p>
+                <ul>
+                    {% for estudo in dia.estudos.all %}
+                        <li>{{ estudo.nome }} - {{ estudo.tempo }}h</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% empty %}
+            <p>Nenhum dia de estudo registrado.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
