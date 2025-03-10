@@ -1,23 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    gap: 20px;
 }
 
 .container {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     gap: 15px;
+    position: relative;
 }
 
 .btn-admin {
     text-decoration: none;
     color: white;
-    padding: 15px;
+    padding: 10px;
     background-color: dodgerblue;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.btn-admin:hover {
+    background-color: rgb(36, 101, 167);
+    transition: .2s;
 }
 
 .dia {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -49,4 +71,40 @@ ul {
 
 li {
     text-align: left;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 0px 10px;
+    }
+
+    .container {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dia {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: large;
+    }
+
+    h2 {
+        font-size: medium;
+    }
+
+    p {
+        font-size: small;
+    }
+
+    li {
+        font-size: small;
+    }
+
+    a{
+        font-size: small;
+    }
 }
