@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dias de Estudo</title>
     <link rel="stylesheet" href="/static/dia.css">
+    <link rel="stylesheet" href="../static/dia.css">
 </head>
 <body>
     <h1>Dias de Estudo - Carvalho</h1>
-    <a href="/admin/calendary/diadeestudo/add/" class="btn-admin">+ Adicionar Dia de Estudo</a>
+    <a href="/admin/calendary/diadeestudo/add/" class="btn-admin">Adicionar Dia de Estudo +</a>
     <div class="container">
         {% for dia in dias %}
             <div class="dia {{ dia.nivel }}">
